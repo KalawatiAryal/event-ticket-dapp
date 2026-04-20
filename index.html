@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventChain - Event Ticket DApp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <h1>EventChain</h1>
+      <p>Blockchain Event Ticketing Platform</p>
+    </div>
+
+    <div class="wallet-section">
+      <span id="walletAddress" class="wallet-address">Not Connected</span>
+      <button id="connectBtn" class="primary-btn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Discover and Manage Events on Ethereum</h2>
+        <p>
+          Create events, publish event details, and buy tickets securely using MetaMask
+          and Ethereum smart contracts.
+        </p>
+      </div>
+    </section>
+
+    <section class="create-event-section card">
+      <h3>Create New Event</h3>
+      <div class="form-grid">
+        <input type="text" id="eventName" placeholder="Event Name" />
+        <input type="date" id="eventDate" />
+        <input type="time" id="eventTime" />
+        <input type="text" id="eventPrice" placeholder="Ticket Price in ETH (e.g. 0.01)" />
+        <textarea id="eventDescription" placeholder="Event Description"></textarea>
+      </div>
+      <button id="createEventBtn" class="primary-btn">Create Event</button>
+      <p id="createStatus" class="status-text"></p>
+    </section>
+
+    <section class="events-section">
+      <div class="section-header">
+        <h3>Available Events</h3>
+        <button id="refreshBtn" class="secondary-btn">Refresh Events</button>
+      </div>
+      <div id="eventsContainer" class="events-grid"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js?v=40"></script>
+</body>
+</html>
