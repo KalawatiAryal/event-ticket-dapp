@@ -1,6 +1,4 @@
-EventChain - Hybrid DApp for Event Ticketing
 
-EventChain is a Hybrid DApp developed for the CN6035 Mobile and Distributed Systems coursework.
 # EventChain - Hybrid DApp for Event Ticketing
 
 EventChain is a Hybrid DApp developed for the CN6035 Mobile and Distributed Systems coursework.
