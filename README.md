@@ -1,57 +1,188 @@
-# Sample Hardhat 3 Beta Project (`node:test` and `viem`)
+EventChain - Hybrid DApp for Event Ticketing
 
-This project showcases a Hardhat 3 Beta project using the native Node.js test runner (`node:test`) and the `viem` library for Ethereum interactions.
+EventChain is a Hybrid DApp developed for the CN6035 Mobile and Distributed Systems coursework.
+# EventChain - Hybrid DApp for Event Ticketing
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+EventChain is a Hybrid DApp developed for the CN6035 Mobile and Distributed Systems coursework.
 
 ## Project Overview
 
-This example project includes:
+This project allows users to:
+- connect MetaMask
+- create blockchain-based events
+- buy tickets using Ethereum transactions
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using [`node:test`](nodejs.org/api/test.html), the new Node.js native test runner, and [`viem`](https://viem.sh/).
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+The project demonstrates how a frontend application can interact with a Solidity smart contract through MetaMask and Hardhat.
 
-## Usage
+## Technologies Used
 
-### Running Tests
+- Solidity
+- Ethereum
+- Hardhat
+- MetaMask
+- HTML
+- CSS
+- JavaScript
+- Ethers.js
 
-To run all the tests in the project, execute the following command:
+## Features
 
-```shell
-npx hardhat test
+- Wallet connection with MetaMask
+- Event creation
+- Ticket purchase
+- Smart contract interaction
+- Blockchain transaction handling
+
+## Project Structure
+
+- `contracts/` - Solidity smart contract files
+- `scripts/` - deployment scripts
+- `index.html` - frontend structure
+- `style.css` - frontend design
+- `app.js` - frontend blockchain interaction
+- `hardhat.config.js` - Hardhat configuration
+- `package.json` - project dependencies
+
+## How to Run the Project Locally
+
+### 1. Install dependencies
+
+```bash
+npm install
 ```
 
-You can also selectively run the Solidity or `node:test` tests:
+### 2. Compile the smart contract
 
-```shell
-npx hardhat test solidity
-npx hardhat test nodejs
+```bash
+npx hardhat compile --force
 ```
 
-### Make a deployment to Sepolia
+### 3. Start Hardhat local blockchain
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
-
-To run the deployment to a local chain:
-
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
+```bash
+npx hardhat node
 ```
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
+### 4. Deploy the contract
 
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
+```bash
+npx hardhat run scripts/deploy.js --network localhost
 ```
 
-After setting the variable, you can run the deployment with the Sepolia network:
+### 5. Start the frontend
 
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
+```bash
+npx serve . -l 8080
 ```
+
+### 6. Open the project in browser
+
+```text
+http://localhost:8080
+```
+
+## MetaMask Setup
+
+Add a custom network in MetaMask with the following details:
+
+- Network Name: Hardhat Local
+- RPC URL: http://127.0.0.1:8545
+- Chain ID: 31337
+- Currency Symbol: ETH
+
+Then import a funded Hardhat account using one of the private keys shown in the Hardhat node terminal.
+
+## Smart Contract Functions
+
+- `createEvent()` - creates and stores a new event on blockchain
+- `buyTicket()` - allows users to buy a ticket
+- `getEvent()` - returns event details
+- `getEventsCount()` - returns the total number of events
+
+## Purpose of the Project
+
+The purpose of this project is to demonstrate how blockchain can be used in a practical application for secure event creation and ticket purchasing. It also shows wallet connection, smart contract interaction, and blockchain transaction handling.
+
+## Author
+
+Name: Kalawati Aryal  
+Student ID: 2659942
+
+## Module
+
+CN6035 Mobile and Distributed Systems Coursework
+Project Overview
+
+This project allows users to:
+
+connect MetaMask
+create blockchain-based events
+buy tickets using Ethereum transactions
+
+The project demonstrates how a frontend application can interact with a Solidity smart contract through MetaMask and Hardhat.
+
+Technologies Used
+Solidity
+Ethereum
+Hardhat
+MetaMask
+HTML
+CSS
+JavaScript
+Ethers.js
+Features
+Wallet connection with MetaMask
+Event creation
+Ticket purchase
+Smart contract interaction
+Blockchain transaction handling
+Project Structure
+contracts/ - Solidity smart contract files
+scripts/ - deployment scripts
+index.html - frontend structure
+style.css - frontend design
+app.js - frontend blockchain interaction
+hardhat.config.js - Hardhat configuration
+package.json - project dependencies
+How to Run the Project Locally
+1. Install dependencies
+npm install
+2. Compile the smart contract
+npx hardhat compile --force
+3. Start Hardhat local blockchain
+npx hardhat node
+4. Deploy the contract
+npx hardhat run scripts/deploy.js --network localhost
+5. Start the frontend
+npx serve . -l 8080
+6. Open the project in browser
+http://localhost:8080
+MetaMask Setup
+
+Add a custom network in MetaMask with the following details:
+
+Network Name: Hardhat Local
+RPC URL: http://127.0.0.1:8545
+Chain ID: 31337
+Currency Symbol: ETH
+
+Then import a funded Hardhat account using one of the private keys shown in the Hardhat node terminal.
+
+Smart Contract Functions
+createEvent() - creates and stores a new event on blockchain
+buyTicket() - allows users to buy a ticket
+getEvent() - returns event details
+getEventsCount() - returns the total number of events
+Purpose of the Project
+
+The purpose of this project is to demonstrate how blockchain can be used in a practical application for secure event creation and ticket purchasing. It also shows wallet connection, smart contract interaction, and blockchain transaction handling.
+
+Author
+
+Name: Kalawati Aryal
+
+Student ID: 2659942
+
+Module
+
+CN6035 Mobile and Distributed Systems Coursework
